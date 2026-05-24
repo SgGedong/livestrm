@@ -3,7 +3,7 @@ name: STRTP Updater
 on:
   schedule:
     # Runs every hour
-    - cron: '0 * * * *'
+    - cron: '*/20 * * * *'
   workflow_dispatch:
 
 permissions:
