@@ -1,4 +1,4 @@
-name: Update Live TV & Events Playlist
+name: Update Events Playlist
 
 on:
   # Allows you to trigger it manually from the Actions tab
