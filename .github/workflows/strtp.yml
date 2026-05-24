@@ -31,7 +31,7 @@ jobs:
         env:
           API_URL: ${{ secrets.STRTP_BASE_URL }}
         run: |
-          python strtp.py
+          python src/strtp.py
 
       - name: Commit & Push safely
         run: |
