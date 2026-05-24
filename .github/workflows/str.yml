@@ -31,7 +31,7 @@ jobs:
         env:
           BASE_URL: ${{ secrets.STR_BASE_URL }}
         run: |
-          python str.py
+          python src/str.py
 
       - name: Commit & Push safely
         run: |
