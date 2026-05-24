@@ -31,7 +31,7 @@ jobs:
           playwright install-deps
 
       - name: Run scraping script
-        run: python tap.py
+        run: python src/tap.py
 
       - name: Commit & Safely Push if Playlist Changed
         env:
