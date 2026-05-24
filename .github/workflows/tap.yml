@@ -33,6 +33,9 @@ jobs:
       - name: Run scraping script
         run: python src/tap.py
 
+      - name: Run scraping script
+        run: python src/update_buff.py
+
       - name: Commit & Safely Push if Playlist Changed
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
