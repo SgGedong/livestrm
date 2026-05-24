@@ -37,13 +37,7 @@ jobs:
       run: playwright install chromium --with-deps
 
     - name: Run Scraper Script
-      run: python src/channels.py
-
-    - name: Run Scraper Script 
-      run: python src/liveevents.py
-
-    - name: Run scraper
-      run: python src/roxie_scraper.py
+      run: python src/update_buff.py
 
     - name: Commit and Push Playlist
       run: |
@@ -57,16 +51,10 @@ jobs:
         if git diff-index --quiet HEAD --; then
           echo "No changes to playlist, skipping commit."
         else
-          git commit -m "Auto-update live_tv_channels.m3u"
-
-        # The '|| true' prevents the workflow from failing if no changes were made
-        git commit -m "Auto-update liveevents.m3u" || true
-
-        git diff --cached --quiet || git commit -m "Update Roxie stream outputs"
-        
+          git commit -m "buff.m3u"
+                
         git push
           
           # Pull remote changes and rebase BEFORE pushing to prevent rejection errors
           git pull --rebase origin main
           git push origin main
-        fi
