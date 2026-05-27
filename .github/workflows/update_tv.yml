@@ -3,7 +3,7 @@ name: ▶️ Update TV Playlist
 on:
   schedule:
     # Runs at the start of every hour
-    - cron: '0 * * * *'
+    - cron: '*/30 * * * *'
   # Allow manual triggering
   workflow_dispatch:
 
@@ -42,7 +42,7 @@ jobs:
         ls -la
         
         # Run the update script
-        if ! python update_tv.py; then
+        if ! python src/update_tv.py; then
           echo "::error::Failed to update playlist"
           exit 1
         fi
