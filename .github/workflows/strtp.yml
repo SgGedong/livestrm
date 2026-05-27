@@ -35,8 +35,8 @@ jobs:
 
       - name: Commit & Push safely
         run: |
-          git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add strtp_vlc.m3u8 strtp_tivimate.m3u8
 
